@@ -1,15 +1,16 @@
-// styles.sass
-
 $primary-color: #3498db
-$secondary-color: #2ecc71
-$font-stack: Arial, sans-serif
+$secondary-color: #182b20
+$background-color: #f0f0f0
+$text-color: #333
+$card-background: #ffffff
+$button-background: #3498db
 
 body
-  font-family: $font-stack
+  font-family: Arial, sans-serif
   margin: 0
   padding: 0
-  background-color: #f8f9fa
-  color: #333
+  background-color: $background-color
+  color: $text-color
 
 .container
   max-width: 1200px
@@ -28,16 +29,17 @@ h1
   justify-content: center
 
 .product
-  background-color: #fff
+  background-color: $card-background
   border: 1px solid #ddd
   border-radius: 8px
   overflow: hidden
   width: 300px
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
-  transition: transform 0.3s
+  transition: transform 0.3s, box-shadow 0.3s
 
   &:hover
     transform: scale(1.05)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
 
   img
     max-width: 100%
@@ -51,23 +53,93 @@ h1
   p
     font-size: 1rem
     margin: 0 16px 16px
+    color: #666
 
-.product-details
+  .add-to-cart
+    background-color: $button-background
+    color: white
+    border: none
+    padding: 10px 20px
+    cursor: pointer
+    font-size: 1rem
+    border-radius: 4px
+    transition: background-color 0.3s
+
+    &:hover
+      background-color: darken($button-background, 10%)
+
+.cart
+  background-color: $card-background
+  border: 1px solid #ddd
+  border-radius: 8px
+  padding: 20px
   margin-top: 40px
-  flex-direction: column
-  align-items: center
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
 
-  h1
-    font-size: 2rem
+  h2
+    font-size: 1.5rem
+    margin-bottom: 10px
+    color: $primary-color
+
+  ul
+    list-style: none
+    padding: 0
+
+  .cart-item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 0
+    border-bottom: 1px solid #ddd
+
+    .item-info
+      display: flex
+      align-items: center
+
+      img
+        width: 80px
+        height: auto
+        margin-right: 20px
+        border-radius: 4px
+
+      .item-details
+        flex-grow: 1
+
+        h3
+          font-size: 1.25rem
+          color: $secondary-color
+          margin-bottom: 5px
+
+        p
+          font-size: 1rem
+          color: #666
+
+    .item-price
+      font-size: 1.25rem
+      color: $primary-color
+      margin-left: 20px
+
+  .cart-total
+    font-size: 1.25rem
+    margin-top: 20px
+    text-align: right
     color: $secondary-color
 
-  img
-    max-width: 100%
-    height: auto
-    margin-bottom: 20px
+  .cart-buttons
+    display: flex
+    justify-content: flex-end
+    margin-top: 20px
 
-  p
-    font-size: 1rem
-    max-width: 800px
-    margin: 0 auto 20px
-    text-align: center
+    button
+      background-color: $button-background
+      color: white
+      border: none
+      padding: 10px 20px
+      cursor: pointer
+      font-size: 1rem
+      border-radius: 4px
+      margin-left: 10px
+      transition: background-color 0.3s
+
+      &:hover
+        background-color: darken($button-background, 10%)
