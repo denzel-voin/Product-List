@@ -1,0 +1,73 @@
+// styles.sass
+
+$primary-color: #3498db
+$secondary-color: #2ecc71
+$font-stack: Arial, sans-serif
+
+body
+  font-family: $font-stack
+  margin: 0
+  padding: 0
+  background-color: #f8f9fa
+  color: #333
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+  padding: 20px
+
+h1
+  text-align: center
+  margin-bottom: 40px
+  color: $primary-color
+
+.product-list, .product-details
+  display: flex
+  flex-wrap: wrap
+  gap: 20px
+  justify-content: center
+
+.product
+  background-color: #fff
+  border: 1px solid #ddd
+  border-radius: 8px
+  overflow: hidden
+  width: 300px
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+  transition: transform 0.3s
+
+  &:hover
+    transform: scale(1.05)
+
+  img
+    max-width: 100%
+    height: auto
+
+  h2
+    font-size: 1.25rem
+    margin: 16px
+    color: $secondary-color
+
+  p
+    font-size: 1rem
+    margin: 0 16px 16px
+
+.product-details
+  margin-top: 40px
+  flex-direction: column
+  align-items: center
+
+  h1
+    font-size: 2rem
+    color: $secondary-color
+
+  img
+    max-width: 100%
+    height: auto
+    margin-bottom: 20px
+
+  p
+    font-size: 1rem
+    max-width: 800px
+    margin: 0 auto 20px
+    text-align: center
